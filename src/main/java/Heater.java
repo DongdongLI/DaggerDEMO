@@ -3,3 +3,6 @@ interface Heater {
 	void off();
 	boolean isHot();
 }
+/*
+ *Simple interface for a Heater
+ * */

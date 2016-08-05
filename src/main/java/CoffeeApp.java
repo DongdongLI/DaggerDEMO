@@ -1,22 +1,17 @@
-import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import dagger.Component;
-
 public class CoffeeApp{
 
 	@Singleton
-	@Component(modules={})
-	
+	@Component(modules={ DripCoffeeModule.class })
+
 	public interface Coffee{
 		CoffeeMaker maker();
 	}
-	@Override
-	public void run() {
-		coffeeMaker.brew();
-	}
 
-	public static void main(String[] args) {
-		Coffee coffee = 
+	public static void main(final String[] args) {
+		final Coffee coffee = DaggerCoffeeApp_Coffee.builder().build();
+		coffee.maker().brew();
 	}
 }

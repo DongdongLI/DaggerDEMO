@@ -1,10 +1,11 @@
 public class ElectricHeater implements Heater{
 
 	boolean heating;
-	
+
 	@Override
 	public void on() {
 		System.out.println("~~~h ea ting~~~");
+		this.heating = true;
 	}
 
 	@Override
@@ -16,5 +17,8 @@ public class ElectricHeater implements Heater{
 	public boolean isHot() {
 		return heating;
 	}
-	
+
 }
+/*
+ * a implementation of heater, nothing special
+ * */

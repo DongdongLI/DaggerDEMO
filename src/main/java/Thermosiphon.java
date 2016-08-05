@@ -2,12 +2,12 @@ import javax.inject.Inject;
 
 public class Thermosiphon implements Pump{
 	private final Heater heater;
-	
+
 	@Inject
-	public Thermosiphon(Heater heater) {
+	public Thermosiphon(final Heater heater) {
 		this.heater = heater;
 	}
-	
+
 	@Override
 	public void pump() {
 		if(heater.isHot()){
@@ -15,3 +15,6 @@ public class Thermosiphon implements Pump{
 		}
 	}
 }
+/*It needs an heater as a component, it will inject the heater
+ * *
+ */

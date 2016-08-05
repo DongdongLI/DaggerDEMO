@@ -3,9 +3,15 @@ import javax.inject.Inject;
 import dagger.Lazy;
 
 public class CoffeeMaker {
-	@Inject Lazy<Heater> heater;
-	@Inject Pump pump;
-	
+	private final Lazy<Heater> heater;
+	private final Pump pump;
+
+	@Inject
+	public CoffeeMaker(final Lazy<Heater> heater, final Pump pump) {
+		this.heater = heater;
+		this.pump = pump;
+	}
+
 	public void brew(){
 		heater.get().on();
 		pump.pump();
